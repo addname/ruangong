@@ -222,7 +222,7 @@ header.scrolled {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--accent);
+  color: #a9b4c2;
   letter-spacing: 0.5px;
 }
 
