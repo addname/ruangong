@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO 优化 -->
+  <title>软工定律 | Software Engineering Laws - 探索研发的底层逻辑</title>
+  <meta name="description"
+    content="软工定律（ruangong.com）系统性地收集、整理并深度剖析软件工程领域的经典法则（如康威定律、布鲁克斯法则、破窗效应、古德哈特定律等）。提供丰富的实际案例分析与切实可行的实践应对策略，帮助开发团队规避系统架构与项目管理陷阱，全面提升交付质量与效能。">
+  <meta name="keywords" content="软工定律, 软件工程定律, 康威定律, 布鲁克斯法则, 破窗效应, 架构设计, 项目管理, 研发效能, 敏捷开发, 软件开发法则, YAGNI, KISS">
+  <meta name="author" content="ruangong.com">
+
+  <!-- Open Graph 社交分享 Meta 标签 -->
+  <meta property="og:title" content="软工定律 | 探索软件开发的底层逻辑与避坑指南">
+  <meta property="og:description" content="汇集软件工程经典的定律、效应与法则。深入剖析系统架构、项目管理与团队文化背后的隐藏规律。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ruangong.com">
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2255%22 font-size=%2275%22 font-family=%22serif%22 fill=%22%232e71b8%22 font-weight=%22bold%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>软</text></svg>">
+
+  <!-- 引入统一样式表 -->
+  <link rel="stylesheet" href="styles.css?v=1.3.8">
+</head>
+
+<body>
+  <!-- 背景杂色纹理 -->
+  <div class="noise-overlay" id="noise-overlay"></div>
+
+  <!-- 1. 顶部导航栏 -->
+  <header id="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo" id="site-logo">
+        <span class="logo-title">软工定律</span>
+        <span class="logo-domain">｜RUANGONG.COM</span>
+      </a>
+
+      <!-- 移动端汉堡菜单 -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="打开导航菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li class="active"><a href="#">首页</a></li>
+        <li><a href="#laws-section">定律列表</a></li>
+        <li><a href="#contribute">贡献定律</a></li>
+        <li>
+          <a href="#contribute" class="btn-contribute-nav" id="nav-contribute-btn">贡献 +</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 2. 英雄头部 (Hero Section) -->
+  <section class="hero" id="hero-section">
+    <div class="container">
+      <div class="hero-tag">
+        探索软件工程的底层真理
+      </div>
+      <h1>
+        Vibe coding，先懂<span class="gradient-text">“软工定律”</span>
+      </h1>
+      <p class="lead">
+        即使在 Vibe coding 的时代，我们也无法摆脱软件工程的客观规律。当架构与质量的防线失守时，AI 堆砌代码的速度，往往只会加速系统灾难的到来。
+      </p>
+
+      <!-- 今日推荐定律板块 -->
+      <div class="today-recommend" id="today-recommend-block">
+        <div class="recommend-content">
+          <div class="recommend-badge">今日推荐定律</div>
+          <h3 class="recommend-title" id="recommend-title">加载中...</h3>
+          <p class="recommend-desc" id="recommend-desc">正在为您挑选今日启发...</p>
+        </div>
+        <button class="btn-recommend-detail" id="btn-recommend-detail">
+          深入阅读
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. 搜索与分类过滤组件 -->
+  <div class="filter-search-section" id="laws-section">
+    <div class="container filter-wrapper">
+      <!-- 分类 Tab -->
+      <div class="category-tabs" id="category-tabs">
+        <button class="tab-btn active" data-category="all">全部定律</button>
+        <button class="tab-btn" data-category="architecture">架构设计</button>
+        <button class="tab-btn" data-category="management">项目管理</button>
+        <button class="tab-btn" data-category="quality">代码质量</button>
+        <button class="tab-btn" data-category="culture">团队协作</button>
+        <button class="tab-btn" data-category="scale">系统规模</button>
+        <button class="tab-btn" data-category="design">设计原则</button>
+        <button class="tab-btn" data-category="decisions">决策逻辑</button>
+      </div>
+
+      <!-- 搜索框 -->
+      <div class="search-box">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索定律名称、关键字...">
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 定律列表卡片展示网格 -->
+  <section class="laws-section">
+    <div class="container">
+      <div class="laws-grid" id="laws-grid">
+        <!-- 动态生成定律卡片 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 贡献与提报定律区域 -->
+  <section class="contribute-section" id="contribute">
+    <div class="container contribute-grid">
+      <!-- 左侧文案 -->
+      <div class="contribute-info">
+        <h2>贡献您所熟知的定律</h2>
+        <p>
+          优秀的法则往往沉淀在长期的工程实践中。如果您知道其他行之有效的软件工程定律、效应或开发黑话，欢迎提交分享给更多的开发者。
+        </p>
+        <div class="contribute-features">
+          <div class="feature-item">
+            <div class="feature-icon">1</div>
+            <p><strong>激发同行共鸣</strong>：帮助其他工程师走出相同的研发泥潭。</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">2</div>
+            <p><strong>名录展示与致谢</strong>：您的建议被采纳后，将以贡献者身份在 ruangong.com 首页永久署名。</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">3</div>
+            <p><strong>构建工程文化</strong>：通过规律的总结，培养客观、科学的软件研发氛围。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧表单 -->
+      <div class="contribute-form-container">
+        <!-- 正常填写的表单 -->
+        <form id="contribute-form">
+          <div class="form-group">
+            <label for="law-name">定律名称 *</label>
+            <input type="text" id="law-name" class="form-control" placeholder="例如：戈达德定律" required>
+          </div>
+
+          <div class="form-group">
+            <label for="law-cat">所属分类 *</label>
+            <select id="law-cat" class="form-control" required>
+              <option value="" disabled selected>选择最符合的类型</option>
+              <option value="architecture">架构设计</option>
+              <option value="management">项目管理</option>
+              <option value="quality">代码质量</option>
+              <option value="culture">团队协作</option>
+              <option value="scale">系统规模</option>
+              <option value="design">设计原则</option>
+              <option value="decisions">决策逻辑</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="law-desc">定律描述与核心启示 *</label>
+            <textarea id="law-desc" class="form-control" placeholder="用通俗的语言阐述这条定律的定义，以及它对我们的软件开发有哪些指导意义或警醒作用。"
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit" id="btn-submit-law">
+            提交贡献
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
+          </button>
+        </form>
+
+        <!-- 提交成功后展示的界面 -->
+        <div class="form-success-state" id="form-success-state">
+          <div class="success-icon">✓</div>
+          <h3>提报成功！</h3>
+          <p>感谢您对软件工程文化的贡献。我们将尽快审核内容并集成至系统，审核通过后您将在主页收到致谢展示。</p>
+          <button class="btn-reset-form" id="btn-reset-form">继续提交</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 7. 页脚 -->
+  <footer id="site-footer">
+    <div class="container footer-wrapper">
+      <div class="footer-logo">
+        ruangong.com
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 软工定律. 探索软件开发的底层真理.
+      </div>
+      <ul class="footer-links">
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#laws-section">法律协议</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- 引入数据源与逻辑脚本 -->
+  <script src="laws.js?v=1.2.0"></script>
+  <script src="script.js?v=1.3.4"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 动态子页 SEO 配置 -->
+  <title>软工定律研究报告 | Ruangong Report</title>
+  <meta name="description" content="收集并解析软件开发中被反复印证的经验法则与行业共识。包含康威定律、布鲁克斯法则、破窗效应等，帮助研发团队在项目架构、团队协作与代码质量上规避客观风险。">
+  <meta name="keywords" content="软工定律, 康威定律, 布鲁克斯法则, 破窗效应, 软件架构, 项目管理, 代码质量">
+  <meta name="author" content="ruangong.com">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2255%22 font-size=%2275%22 font-family=%22serif%22 fill=%22%232e71b8%22 font-weight=%22bold%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>软</text></svg>">
+  
+  <!-- 引入子页专用样式表 -->
+  <link rel="stylesheet" href="detail_styles.css?v=1.5.5">
+</head>
+<body>
+  <!-- 纸纹格子底纹 -->
+  <div class="noise-overlay" id="noise-overlay"></div>
+
+  <header id="site-header">
+    <div class="detail-container nav-wrapper">
+      <a href="index.html" class="logo" id="site-logo">
+        <span class="logo-title">软工定律</span>
+        <span class="logo-domain">｜RUANGONG.COM</span>
+      </a>
+
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="index.html">首页</a>
+        <a href="index.html#laws-section">定律列表</a>
+        <a href="index.html#contribute">贡献定律</a>
+        <a href="index.html#contribute" class="btn-contribute-nav">贡献 +</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <!-- 单版面内容区域 -->
+    <main class="content-box">
+      <div class="post-wrapper" id="post-wrapper">
+        <!-- 由 detail_script.js 根据当前 URL 参数动态生成详细文章内容 -->
+      </div>
+    </main>
+  </div>
+
+  <!-- 引入核心数据与子页逻辑脚本 -->
+  <script src="laws.js?v=1.2.0"></script>
+  <script src="detail_script.js?v=1.5.2"></script>
+</body>
+</html>
