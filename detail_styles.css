@@ -790,7 +790,7 @@ code {
   min-height: 170px;
 }
 
-.github-comments .utterances {
+.github-comments .giscus {
   max-width: 100%;
 }
 

@@ -262,21 +262,29 @@ document.addEventListener("DOMContentLoaded", () => {
       </article>
     `;
 
-    loadGithubComments();
+    loadGiscusComments(law);
   }
 
-  function loadGithubComments() {
+  function loadGiscusComments(law) {
     const comments = document.getElementById("github-comments");
     if (!comments) return;
 
     comments.innerHTML = "";
 
     const script = document.createElement("script");
-    script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "addname/ruangong");
-    script.setAttribute("issue-term", "title");
-    script.setAttribute("label", "comments");
-    script.setAttribute("theme", "github-light");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "addname/ruangong");
+    script.setAttribute("data-repo-id", "R_kgDOS5p6YQ");
+    script.setAttribute("data-category", "General");
+    script.setAttribute("data-category-id", "DIC_kwDOS5p6Yc4C_FWh");
+    script.setAttribute("data-mapping", "specific");
+    script.setAttribute("data-term", `软工定律：${law.name}`);
+    script.setAttribute("data-strict", "1");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-theme", "noborder_light");
+    script.setAttribute("data-lang", "zh-CN");
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
 
