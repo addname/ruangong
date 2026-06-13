@@ -448,7 +448,7 @@ a {
   height: 150px;
 }
 
-.post-hero-visual svg g {
+.post-hero-visual .law-visual-lines {
   fill: none;
   stroke: rgba(255, 255, 255, 0.95);
   stroke-width: 5;
