@@ -253,8 +253,34 @@ document.addEventListener("DOMContentLoaded", () => {
             `).join("")}
           </div>
         </section>
+
+        <section class="post-section comments-section" aria-labelledby="comments-title">
+          <h2 class="post-section-title" id="comments-title">讨论</h2>
+          <p class="comments-note">欢迎补充案例、指出问题，或留下你在项目里踩过的坑。</p>
+          <div class="github-comments" id="github-comments"></div>
+        </section>
       </article>
     `;
+
+    loadGithubComments();
+  }
+
+  function loadGithubComments() {
+    const comments = document.getElementById("github-comments");
+    if (!comments) return;
+
+    comments.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "addname/ruangong");
+    script.setAttribute("issue-term", "title");
+    script.setAttribute("label", "comments");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+
+    comments.appendChild(script);
   }
 
   function getParsedTakeaways(law) {

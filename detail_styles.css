@@ -773,6 +773,27 @@ code {
   text-decoration: underline;
 }
 
+.comments-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 26px;
+  margin-top: 48px;
+}
+
+.comments-note {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: -4px 0 18px;
+}
+
+.github-comments {
+  min-height: 170px;
+}
+
+.github-comments .utterances {
+  max-width: 100%;
+}
+
 /* ==========================================
  * 移动端与响应式适配
  * ========================================== */
