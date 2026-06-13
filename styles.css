@@ -318,11 +318,31 @@ header.scrolled {
 
 .hero-tag {
   display: inline-block;
+  font-family: var(--font-mono);
   font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.hero-tag:hover {
   color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
+}
+
+.hero-tag::before {
+  content: "#";
+  color: var(--text-muted);
+  margin-right: 8px;
+  font-weight: 400;
+  transition: var(--transition-fast);
+}
+
+.hero-tag:hover::before {
+  color: var(--accent);
 }
 
 .hero h1 {
@@ -339,6 +359,13 @@ header.scrolled {
   color: var(--accent);
   font-weight: 700;
 }
+
+.vibe-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+
 
 .hero p.lead {
   font-size: 1.15rem;
@@ -1150,6 +1177,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .hero-tag {
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+  }
+
   .menu-toggle {
     display: flex;
   }
