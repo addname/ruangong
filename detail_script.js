@@ -120,7 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <header class="post-hero">
         <div class="post-hero-inner">
           <div class="post-hero-copy">
-            <a class="back-to-laws" href="index.html">← 返回定律列表</a>
             <div class="breadcrumb">定律 / ${law.name}</div>
             <h1>${law.name}</h1>
             <div class="english-title">${law.englishName}</div>
